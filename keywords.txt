@@ -1,0 +1,26 @@
+#######################################
+# Syntax Coloring Map For LM35 library
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+LM35	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+Read	KEYWORD2
+UseHighResolution	KEYWORD2
+useDefaultResolution	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+CELSIUS	KEYWORD3
+FAHRENHEIT	KEYWORD3
+DEFAULT_RESOLUTION	KEYWORD3
+HIGH_RESOLUTION	KEYWORD3
