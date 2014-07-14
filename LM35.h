@@ -1,9 +1,16 @@
-/* 
-* LM35.h
+/*
+* LM35.cpp
 *
-* Created: 13-4-2014 16:31:56
-* Author: CE-Designs
-* Version: 1.0.0.0 
+* Created:	13-4-2014 16:31:40
+* Author:	CE-Designs
+* Version:	1.01
+*
+* Modified: 13-7-2014
+* Reason:	To ensure more accurate reading the sensor is
+*			now being read 4 times and the average of the
+*			measurements is returned
+*			Also changed the way that the analog reference
+*			is being set
 */
 
 
@@ -24,36 +31,38 @@
 //
 class LM35
 {
-//variables
-public:
+	//variables
+	public:
 	
-protected:
-		
-private:
+	protected:
+	
+	private:
 
 	int TempPin;
 	uint8_t Resolution;
 	uint8_t UnitOfMeasurement;
 
-//functions
-public:
+	//functions
+	public:
 
 	LM35(int tempPin, uint8_t unitOfMeasurement);
 	LM35(int tempPin, uint8_t unitOfMeasurement, uint8_t resolution);
 	
-	float Read();	
-	void UseHighResolution();
+	void begin();
+	float read();
+	void useHighResolution();
 	void useDefaultResolution();
 	
-protected:
+	protected:
 
-private:
+	private:
 
+	float measureFoutTimes();
 	float readCelcius(int reading);
 	float readFahrenheit(int reading);
 	float readCelciusHighRes(int reading);
 	float readFahrenheitHighRes(int reading);
-	
+	void applyResolution();
 
 }; //LM35
 
